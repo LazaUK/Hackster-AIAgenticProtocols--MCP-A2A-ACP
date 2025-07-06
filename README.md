@@ -87,7 +87,7 @@ This section demonstrates how an AI agent can dynamically discover and use exter
     ```
 
 > [!NOTE]
-> Hackster article about MCP can be accessed [here](PROVIDE_URL).
+> Hackster article about MCP can be accessed [here](https://www.hackster.io/news/ai-agentic-protocols-part-1-model-context-protocol-mcp-f9c7d198fe4c?17de40aac6ef19073756e1237c8c0cb0).
 
 ## Part 2: Agent2Agent Protocol (A2A)
 
