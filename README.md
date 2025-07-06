@@ -30,42 +30,44 @@ pip install -r requirements.txt
 ## Part 1: Model Context Protocol (MCP)
 This section demonstrates how an AI agent can dynamically discover and use external tools. The implementation uses an **MCP Server** (`MCPServer_HomeAutomation.py`) to expose home automation functionalities (tools) and an **MCP Client** (`MCPClient_GradioUI.py`) as a Gradio UI for user interaction.
 
-1.  **Defining MCP Tools and Resources (MCP Server):**
-Functions decorated with `@mcp.tool()` or `@mcp.resource()` in the `MCPServer_HomeAutomation.py` file define callable actions (Tools) or retrievable data (Resources) for the AI.
-``` Python
-from mcp.server.fastmcp import FastMCP
-mcp = FastMCP("Home Automation")
+1.  **Defining MCP Tools and Resources (MCP Server):** functions decorated with `@mcp.tool()` or `@mcp.resource()` in the `MCPServer_HomeAutomation.py` file define callable actions (Tools) or retrievable data (Resources) for the AI.
 
-@mcp.tool()
-def control_light(action: str) -> str: # Generalised snippet
-    # ...
-    return "Light controlled."
+    ``` Python
+    from mcp.server.fastmcp import FastMCP
+    mcp = FastMCP("Home Automation")
 
-@mcp.resource("home://device_status")
-def get_device_status() -> str: # Generalised snippet
-    # ...
-    return "{}"
+    @mcp.tool()
+    def control_light(action: str) -> str: # Generalized snippet
+        # ...
+        return "Light controlled."
 
-if __name__ == "__main__":
-    mcp.run() # Starts the MCP server
-```
+    @mcp.resource("home://device_status")
+    def get_device_status() -> str: # Generalized snippet
+        # ...
+        return "{}"
 
-2.  **Establishing MCP Server Connection (MCP Client):**
-    The `MCPClient_GradioUI.py` starts the server as a subprocess and connects using `MCPServerStdio` to enable tool discovery.
+    if __name__ == "__main__":
+        mcp.run() # Starts the MCP server
+    ```
 
-    ```python
+2.  **Establishing MCP Server Connection (MCP Client):** the `MCPClient_GradioUI.py` starts the server as a subprocess and connects using `MCPServerStdio` to enable tool discovery.
+
+    ``` Python
     import subprocess
     from agents.mcp import MCPServerStdio
+    
     server_process = subprocess.Popen([...]) # Start server
+
     mcp_server = MCPServerStdio(...)
     await mcp_server.__aenter__() # Initialize connection
     ```
 
-3.  **Initializing AI Agent with MCP Servers (MCP Client):**
-    An `Agent` is initialized with the connected `mcp_servers`. The agent's instructions are dynamically updated based on MCP tool availability.
+4.  **Initialising AI Agent with MCP Servers (MCP Client):**
+    An `Agent` is initialised with the connected `mcp_servers`. The agent's instructions are dynamically updated based on MCP tool availability.
 
-    ```python
+    ``` Python
     from agents import Agent, OpenAIChatCompletionsModel
+    
     agent = Agent(
         name="Home Assistant",
         instructions="Use tools...",
@@ -74,11 +76,11 @@ if __name__ == "__main__":
     )
     ```
 
-4.  **Processing User Input and Running Agent (MCP Client):**
-    When a user inputs a query, `Runner.run()` is invoked. The AI model, aware of the MCP tools, decides whether to call a relevant tool or access a resource via the MCP layer to fulfill the request.
+5.  **Processing User Input and Running Agent (MCP Client):** when a user inputs a query, `Runner.run()` is invoked. The AI model, aware of the MCP tools, decides whether to call a relevant tool or access a resource via the MCP layer to fulfill the request.
 
-    ```python
+    ```Python
     from agents import Runner
+    
     async def process_user_input(user_input, agent):
         result = await Runner.run(starting_agent=agent, input=user_input)
         return result.final_output
