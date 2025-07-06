@@ -101,4 +101,4 @@ This section demonstrates how an AI agent can dynamically discover and use exter
 
 ## Demo videos on YouTube
 
-- [AI Agentic protocols: Part 1 - MCP](PROVIDE_URL)
+- [AI Agentic protocols: Part 1 - MCP (Home Automation UI demo)](https://youtu.be/HG9CIeBkco4)
