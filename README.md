@@ -100,3 +100,5 @@ This section demonstrates how an AI agent can dynamically discover and use exter
 > Work in progress. To be updated soon!
 
 ## Demo videos on YouTube
+
+- [AI Agentic protocols: Part 1 - MCP](PROVIDE_URL)
