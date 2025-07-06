@@ -29,6 +29,9 @@ pip install -r requirements.txt
 
 ## Part 1: Model Context Protocol (MCP)
 
+> [!NOTE]
+> Hackster article about MCP can be accessed [here](PROVIDE_URL).
+
 ## Part 2: Agent2Agent Protocol (A2A)
 
 ## Part 3: Agent Communication Protocol (ACP)
