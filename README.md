@@ -62,7 +62,7 @@ This section demonstrates how an AI agent can dynamically discover and use exter
     await mcp_server.__aenter__() # Initialize connection
     ```
 
-4.  **Initialising AI Agent with MCP Servers (MCP Client):**
+3.  **Initialising AI Agent with MCP Servers (MCP Client):**
     An `Agent` is initialised with the connected `mcp_servers`. The agent's instructions are dynamically updated based on MCP tool availability.
 
     ``` Python
@@ -76,7 +76,7 @@ This section demonstrates how an AI agent can dynamically discover and use exter
     )
     ```
 
-5.  **Processing User Input and Running Agent (MCP Client):** when a user inputs a query, `Runner.run()` is invoked. The AI model, aware of the MCP tools, decides whether to call a relevant tool or access a resource via the MCP layer to fulfill the request.
+4.  **Processing User Input and Running Agent (MCP Client):** when a user inputs a query, `Runner.run()` is invoked. The AI model, aware of the MCP tools, decides whether to call a relevant tool or access a resource via the MCP layer to fulfill the request.
 
     ```Python
     from agents import Runner
