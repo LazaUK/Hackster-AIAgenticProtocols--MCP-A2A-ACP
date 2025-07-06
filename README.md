@@ -19,7 +19,7 @@ The repository includes Python code to jump-start practical implementation of th
 ``` PowerShell
 pip install -r requirements.txt
 ```
-2. If using Azure OpenAI as your AI backend, set the following environmnet variables:
+2. If using Azure OpenAI as your AI backend, set the following environment variables:
 
 | Variable                | Description                                      |
 | ----------------------- | ------------------------------------------------ |
