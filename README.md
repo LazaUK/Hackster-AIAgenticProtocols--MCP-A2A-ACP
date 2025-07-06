@@ -8,11 +8,11 @@ This GitHub repo complements The Learning Series articles on [Hackster.io](https
 The repo includes Python code to jump-start practical implementation of these protocols, offering immediate application opportunities.
 
 ## 📑 Table of contents:
-- [Environment Setup]()
-- [Part 1: Model Context Protocol (MCP)]()
-- [Part 2: Agent2Agent Protocol (A2A)]()
-- [Part 3: Agent Communication Protocol (ACP)]()
-- [Demo videos on YouTube]()
+- [Environment Setup](#environment-setup)
+- [Part 1: Model Context Protocol (MCP)](#part-1-model-context-protocol-mcp)
+- [Part 2: Agent2Agent Protocol (A2A)](#part-2-agent2agent-protocol-a2a)
+- [Part 3: Agent Communication Protocol (ACP)](#part-3-agent-communication-protocol-acp)
+- [Demo videos on YouTube](#demo-videos-on-youtube)
 
 ## Environment Setup
 1. Install the required Python packages, listed in the provided *requirements.txt*:
